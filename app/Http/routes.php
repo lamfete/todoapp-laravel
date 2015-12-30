@@ -35,4 +35,9 @@ Route::group(['middleware' => ['web']], function () {
     //Registration Routes
     Route::get('auth/register', 'Auth\AuthController@getRegister');
     Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+    //Task Routes
+    Route::get('/tasks', 'TaskController@index');
+    Route::post('/task', 'TaskController@store');
+    Route::delete('/task/{task}', 'TaskController@destroy');
 });
